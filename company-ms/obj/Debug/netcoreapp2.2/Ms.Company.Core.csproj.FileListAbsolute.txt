@@ -1,0 +1,16 @@
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\appsettings.Development.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\appsettings.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Company.Core.deps.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Company.Core.runtimeconfig.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Company.Core.runtimeconfig.dev.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Company.Core.dll
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Company.Core.pdb
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.csprojAssemblyReference.cache
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.RazorAssemblyInfo.cache
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.RazorAssemblyInfo.cs
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.AssemblyInfoInputs.cache
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.AssemblyInfo.cs
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.RazorTargetAssemblyInfo.cache
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.dll
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Company.Core.pdb
