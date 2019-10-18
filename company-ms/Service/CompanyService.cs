@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ms.Companies.Core.Contracts;
-using Ms.Companies.Core.Model;
+using MsCompany.Core.Contracts;
+using MsCompany.Core.Model;
 
-namespace Ms.Companies.Core.Sevices
+namespace MsCompany.Core.Sevices
 {
     public class CompanyService : ICompanyService
     {

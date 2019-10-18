@@ -2,30 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Ms.Companies.Core.Model;
+using MsCompany.Core.Model;
+using MsCompany.Core.Service;
 
-namespace Ms.Companies.Core
+namespace MsCompany.Core
 {
     [Route("api/[controller]")]
     [ApiController]
     public class CompanyAddressesController : ControllerBase
     {
         private readonly DataBaseContext _context;
+        private ErrorService _error;
 
         public CompanyAddressesController(DataBaseContext context)
         {
             _context = context;
         }
 
-        // GET: api/CompanyAddresses
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CompanyAddress>>> GetCompanyAddress()
-        {
-            return await _context.CompanyAddress.ToListAsync();
-        }
+        //// GET: api/CompanyAddresses
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<CompanyAddress>>> GetCompanyAddress()
+        //{
+        //    return await _context.CompanyAddress.ToListAsync();
+        //}
 
 
         // GET: api/CompanyAddresses/5
@@ -36,7 +37,7 @@ namespace Ms.Companies.Core
 
             if (companyAddress == null)
             {
-                return NotFound();
+                return NotFound(_error.CreateMessageReturnError(new { CompanyAddressId = _error.CreateMessageError(3, 1)}, 1));
             }
 
             return companyAddress;
@@ -44,29 +45,23 @@ namespace Ms.Companies.Core
 
         // PUT: api/CompanyAddresses/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCompanyAddress(int id, CompanyAddress companyAddress)
+        public IActionResult PutCompanyAddress(int id, CompanyAddress companyAddress)
         {
             if (id != companyAddress.CompanyAddressId)
             {
-                return BadRequest();
+                return BadRequest(_error.CreateMessageReturnError(new { CompanyAddressId = _error.CreateMessageError(3, 2) }, 1));
             }
-
-            _context.Entry(companyAddress).State = EntityState.Modified;
-
+            if (!CompanyAddressExists(id))
+            {
+                return NotFound(_error.CreateMessageReturnError(new { CompanyAddressId = _error.CreateMessageError(3, 1) }, 1));
+            }
             try
             {
-                await _context.SaveChangesAsync();
+                CompanyAddressUpdate(companyAddress);
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CompanyAddressExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+            catch (DbUpdateConcurrencyException e)
+            {                
+                return BadRequest(_error.CreateMessageReturnError(e,2));                
             }
 
             return NoContent();
@@ -76,12 +71,23 @@ namespace Ms.Companies.Core
         [HttpPost]
         public async Task<ActionResult<CompanyAddress>> PostCompanyAddress(CompanyAddress companyAddress)
         {
-            _context.CompanyAddress.Add(companyAddress);
-            await _context.SaveChangesAsync();
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(_error.CreateMessageReturnError(ModelState, 1));
+            }
+            try
+            {
+                CompanyAddressPost(companyAddress);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(_error.CreateMessageReturnError(e, 2));
+            }
 
             return CreatedAtAction("GetCompanyAddress", new { id = companyAddress.CompanyAddressId }, companyAddress);
         }
 
+       
         // DELETE: api/CompanyAddresses/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<CompanyAddress>> DeleteCompanyAddress(int id)
@@ -89,11 +95,17 @@ namespace Ms.Companies.Core
             var companyAddress = await _context.CompanyAddress.FindAsync(id);
             if (companyAddress == null)
             {
-                return NotFound();
+                return NotFound(_error.CreateMessageReturnError(new { CompanyAddressId = _error.CreateMessageError(3, 1) }, 1));
             }
-
-            _context.CompanyAddress.Remove(companyAddress);
-            await _context.SaveChangesAsync();
+            companyAddress.DateDeleted = DateTime.Now;
+            try
+            {
+                CompanyAddressUpdate(companyAddress);                
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                return BadRequest(_error.CreateMessageReturnError(e,2));
+            }
 
             return companyAddress;
         }
@@ -101,6 +113,42 @@ namespace Ms.Companies.Core
         private bool CompanyAddressExists(int id)
         {
             return _context.CompanyAddress.Any(e => e.CompanyAddressId == id);
+        }
+
+        public bool CompanyAddressPost(CompanyAddress companyAddress)
+        {
+            _context.CompanyAddress.Add(companyAddress);
+            try
+            {
+                _context.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public bool CompanyAddressUpdate(CompanyAddress companyAddress)
+        {
+            var _companyAddress = _context.CompanyAddress.Find(companyAddress);
+            if (companyAddress == null)
+            {
+                return false;
+            }
+
+            companyAddress.DateUpdated = DateTime.Now;
+            _context.Entry(companyAddress).State = EntityState.Modified;
+            try
+            {
+                _context.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

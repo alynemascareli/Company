@@ -6,18 +6,18 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "Ms.Company.Tests/1.0.0": {
+      "MsCompany.Tests/1.0.0": {
         "dependencies": {
           "FluentAssertions": "5.9.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.TestHost": "3.0.0",
-          "Ms.Companies.Core": "1.0.0",
+          "MsCompany.Core": "1.0.0",
           "xunit": "2.4.1",
           "xunit.core": "2.4.1",
           "xunit.runner.visualstudio": "2.4.1"
         },
         "runtime": {
-          "Ms.Company.Tests.dll": {}
+          "MsCompany.Tests.dll": {}
         }
       },
       "FluentAssertions/5.9.0": {
@@ -2112,7 +2112,7 @@
           "Microsoft.NET.Test.Sdk": "15.0.0"
         }
       },
-      "Ms.Companies.Core/1.0.0": {
+      "MsCompany.Core/1.0.0": {
         "dependencies": {
           "FluentAssertions": "5.9.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.7.12",
@@ -2121,13 +2121,13 @@
           "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2"
         },
         "runtime": {
-          "Ms.Companies.Core.dll": {}
+          "MsCompany.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Ms.Company.Tests/1.0.0": {
+    "MsCompany.Tests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3490,7 +3490,7 @@
       "path": "xunit.runner.visualstudio/2.4.1",
       "hashPath": "xunit.runner.visualstudio.2.4.1.nupkg.sha512"
     },
-    "Ms.Companies.Core/1.0.0": {
+    "MsCompany.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

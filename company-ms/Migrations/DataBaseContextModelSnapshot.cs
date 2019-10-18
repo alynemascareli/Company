@@ -3,9 +3,9 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Ms.Companies.Core.Model;
+using MsCompany.Core.Model;
 
-namespace MsCompany.Migrations
+namespace MsCompany.Core.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
     partial class DataBaseContextModelSnapshot : ModelSnapshot
@@ -17,7 +17,7 @@ namespace MsCompany.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("MsCompany.Model.Company", b =>
+            modelBuilder.Entity("MsCompany.Core.Model.Companies", b =>
                 {
                     b.Property<int>("CompanyId")
                         .ValueGeneratedOnAdd();
@@ -34,11 +34,7 @@ namespace MsCompany.Migrations
 
                     b.Property<DateTime>("DateUpdated");
 
-                    b.Property<string>("Description");
-
                     b.Property<string>("Email");
-
-                    b.Property<string>("Facebook");
 
                     b.Property<string>("FictitiousName");
 
@@ -46,75 +42,25 @@ namespace MsCompany.Migrations
 
                     b.Property<string>("MEI");
 
-                    b.Property<int?>("OwnerId");
-
                     b.Property<string>("Phone");
 
-                    b.Property<string>("SerieNFCE");
+                    b.Property<string>("SerieNfce");
 
                     b.Property<int>("Status");
 
                     b.Property<string>("Time");
 
-                    b.Property<string>("TokenNFCE");
-
-                    b.Property<string>("Twitter");
-
-                    b.Property<string>("WebSite");
-
-                    b.Property<int?>("ZAccount_balance");
-
-                    b.Property<string>("ZBirthdate");
-
-                    b.Property<string>("ZBusiness_opening_date");
-
-                    b.Property<int?>("ZCurrent_balance");
-
-                    b.Property<string>("ZDefault_credit");
-
-                    b.Property<string>("ZDefault_debit");
-
-                    b.Property<bool>("ZDelinquent");
-
-                    b.Property<string>("ZDescription");
-
-                    b.Property<string>("ZEin");
-
-                    b.Property<string>("ZEmail");
-
-                    b.Property<string>("ZFirstName");
-
-                    b.Property<string>("ZFiscal_responsibility");
-
-                    b.Property<string>("ZId");
-
-                    b.Property<string>("ZLastName");
-
-                    b.Property<string>("ZMcc");
-
-                    b.Property<string>("ZMetadata");
-
-                    b.Property<string>("ZPhoneNumber");
-
-                    b.Property<string>("ZResource");
-
-                    b.Property<string>("ZStatement_descriptor");
-
-                    b.Property<string>("ZStatus");
-
-                    b.Property<string>("ZTaxpayerId");
-
-                    b.Property<string>("ZType");
+                    b.Property<string>("TokenNfce");
 
                     b.HasKey("CompanyId");
 
                     b.HasIndex("CnpjCpf")
                         .IsUnique();
 
-                    b.ToTable("Company");
+                    b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("MsCompany.Model.CompanyAddress", b =>
+            modelBuilder.Entity("MsCompany.Core.Model.CompanyAddress", b =>
                 {
                     b.Property<int>("CompanyAddressId")
                         .ValueGeneratedOnAdd();
@@ -122,10 +68,6 @@ namespace MsCompany.Migrations
                     b.Property<string>("City");
 
                     b.Property<int>("CompanyId");
-
-                    b.Property<int?>("CompanyId1");
-
-                    b.Property<int?>("CompanyId2");
 
                     b.Property<int>("CompanyType");
 
@@ -155,14 +97,10 @@ namespace MsCompany.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.HasIndex("CompanyId1");
-
-                    b.HasIndex("CompanyId2");
-
                     b.ToTable("CompanyAddress");
                 });
 
-            modelBuilder.Entity("MsCompany.Model.CompanyParams", b =>
+            modelBuilder.Entity("MsCompany.Core.Model.CompanyParams", b =>
                 {
                     b.Property<int>("CompanyParamsId")
                         .ValueGeneratedOnAdd();
@@ -179,9 +117,9 @@ namespace MsCompany.Migrations
 
                     b.Property<string>("NameIntegration");
 
-                    b.Property<string>("Value");
+                    b.Property<bool>("Type");
 
-                    b.Property<bool>("type");
+                    b.Property<string>("Value");
 
                     b.HasKey("CompanyParamsId");
 
@@ -190,25 +128,17 @@ namespace MsCompany.Migrations
                     b.ToTable("CompanyParams");
                 });
 
-            modelBuilder.Entity("MsCompany.Model.CompanyAddress", b =>
+            modelBuilder.Entity("MsCompany.Core.Model.CompanyAddress", b =>
                 {
-                    b.HasOne("MsCompany.Model.Company")
-                        .WithMany("ZOwner_address")
+                    b.HasOne("MsCompany.Core.Model.Companies")
+                        .WithMany("CompanyAddress")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("MsCompany.Model.Company")
-                        .WithMany("CompanyAddress")
-                        .HasForeignKey("CompanyId1");
-
-                    b.HasOne("MsCompany.Model.Company")
-                        .WithMany("ZBusiness_address")
-                        .HasForeignKey("CompanyId2");
                 });
 
-            modelBuilder.Entity("MsCompany.Model.CompanyParams", b =>
+            modelBuilder.Entity("MsCompany.Core.Model.CompanyParams", b =>
                 {
-                    b.HasOne("MsCompany.Model.Company")
+                    b.HasOne("MsCompany.Core.Model.Companies")
                         .WithMany("CompanyParams")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade);

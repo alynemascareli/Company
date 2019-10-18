@@ -1,16 +1,48 @@
 A:\microservices\company-ms\bin\Debug\netcoreapp2.2\appsettings.Development.json
 A:\microservices\company-ms\bin\Debug\netcoreapp2.2\appsettings.json
 A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
-A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Companies.Core.deps.json
-A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Companies.Core.runtimeconfig.json
-A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Companies.Core.runtimeconfig.dev.json
-A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Companies.Core.dll
-A:\microservices\company-ms\bin\Debug\netcoreapp2.2\Ms.Companies.Core.pdb
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.RazorAssemblyInfo.cache
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.RazorAssemblyInfo.cs
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.AssemblyInfoInputs.cache
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.AssemblyInfo.cs
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.RazorTargetAssemblyInfo.cache
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.dll
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.pdb
-A:\microservices\company-ms\obj\Debug\netcoreapp2.2\Ms.Companies.Core.csprojAssemblyReference.cache
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.deps.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.runtimeconfig.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.runtimeconfig.dev.json
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.dll
+A:\microservices\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.pdb
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorAssemblyInfo.cache
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorAssemblyInfo.cs
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.AssemblyInfoInputs.cache
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.AssemblyInfo.cs
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorTargetAssemblyInfo.cache
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.dll
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.pdb
+A:\microservices\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.csprojAssemblyReference.cache
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\appsettings.Development.json
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\appsettings.json
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.deps.json
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.runtimeconfig.json
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.runtimeconfig.dev.json
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.dll
+A:\Nova pasta\MsCompany\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.pdb
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.csprojAssemblyReference.cache
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorAssemblyInfo.cache
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorAssemblyInfo.cs
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.AssemblyInfoInputs.cache
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.AssemblyInfo.cs
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorTargetAssemblyInfo.cache
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.dll
+A:\Nova pasta\MsCompany\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.pdb
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\appsettings.Development.json
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\appsettings.json
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.deps.json
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.runtimeconfig.json
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.runtimeconfig.dev.json
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.dll
+a:\Nova pasta\Ms.Company\company-ms\bin\Debug\netcoreapp2.2\MsCompany.Core.pdb
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.csprojAssemblyReference.cache
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorAssemblyInfo.cache
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorAssemblyInfo.cs
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.AssemblyInfoInputs.cache
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.AssemblyInfo.cs
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.RazorTargetAssemblyInfo.cache
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.dll
+a:\Nova pasta\Ms.Company\company-ms\obj\Debug\netcoreapp2.2\MsCompany.Core.pdb

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
 
-namespace Ms.Companies.Core.Model
+namespace MsCompany.Core.Model
 {
     
     [Table("Company")]
@@ -29,5 +29,6 @@ namespace Ms.Companies.Core.Model
         public DateTime DateDeleted { get; set; } = new DateTime(0001, 01, 01, 0, 0, 0);
         public List<CompanyAddress> CompanyAddress { get; set; }
         public List<CompanyParams> CompanyParams { get; set; }
+
     }   
 }

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "A:\\microservices\\company-ms\\Ms.Company.Core.csproj": {}
+    "A:\\microservices\\company-ms\\MsCompany.Core.csproj": {}
   },
   "projects": {
-    "A:\\microservices\\company-ms\\Ms.Company.Core.csproj": {
+    "A:\\microservices\\company-ms\\MsCompany.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\microservices\\company-ms\\Ms.Company.Core.csproj",
-        "projectName": "Ms.Company.Core",
-        "projectPath": "A:\\microservices\\company-ms\\Ms.Company.Core.csproj",
+        "projectUniqueName": "A:\\microservices\\company-ms\\MsCompany.Core.csproj",
+        "projectName": "MsCompany.Core",
+        "projectPath": "A:\\microservices\\company-ms\\MsCompany.Core.csproj",
         "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
         "outputPath": "A:\\microservices\\company-ms\\obj\\",
         "projectStyle": "PackageReference",

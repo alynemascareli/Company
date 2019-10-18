@@ -1,18 +1,19 @@
-using Ms.Companies.Core.Model;
+using MsCompany.Core.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ms.Companies.Core.Model
+namespace MsCompany.Core.Model
 {
     public class DataBaseContext : DbContext
     {
         public DbSet<Company> Company { get; set; }
         public DbSet<CompanyAddress> CompanyAddress { get; set; }
         public DbSet<CompanyParams> CompanyParams { get; set; }
-        public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options) { }
+
+        public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options) { }        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

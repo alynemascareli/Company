@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ms.Companies.Core.Model;
+using MsCompany.Core.Model;
 
-namespace Ms.Companies.Core.Contracts
+namespace MsCompany.Core.Contracts
 {
     public interface ICompanyService
     {

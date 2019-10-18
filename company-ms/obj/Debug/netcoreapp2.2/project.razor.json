@@ -1,5 +1,5 @@
 {
-  "FilePath": "a:\\microservices\\company-ms\\Ms.Companies.Core.csproj",
+  "FilePath": "a:\\Nova pasta\\Ms.Company\\company-ms\\MsCompany.Core.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2958,7 +2958,7 @@
     ],
     "CSharpLanguageVersion": 703
   },
-  "RootNamespace": "Ms.Companies.Core",
+  "RootNamespace": "MsCompany.Core",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

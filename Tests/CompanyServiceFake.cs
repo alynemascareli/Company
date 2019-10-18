@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ms.Companies.Core.Contracts;
-using Ms.Companies.Core.Model;
+using MsCompany.Core.Contracts;
+using MsCompany.Core.Model;
 
-namespace Ms.Companies.Tests
+namespace MsCompany.Tests
 {
     class CompanyServiceFake : ICompanyService
     {

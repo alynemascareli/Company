@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
 
-namespace Ms.Companies.Core.Model
+namespace MsCompany.Core.Model
 {
     [Table("CompanyAddress")]
     public class CompanyAddress

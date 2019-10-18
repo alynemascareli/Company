@@ -4,12 +4,12 @@
     "A:\\Nova pasta\\Ms.Company\\Tests\\Ms.Company.Tests.csproj": {}
   },
   "projects": {
-    "A:\\Nova pasta\\Ms.Company\\company-ms\\Ms.Companies.Core.csproj": {
+    "A:\\Nova pasta\\Ms.Company\\company-ms\\MsCompany.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Nova pasta\\Ms.Company\\company-ms\\Ms.Companies.Core.csproj",
-        "projectName": "Ms.Companies.Core",
-        "projectPath": "A:\\Nova pasta\\Ms.Company\\company-ms\\Ms.Companies.Core.csproj",
+        "projectUniqueName": "A:\\Nova pasta\\Ms.Company\\company-ms\\MsCompany.Core.csproj",
+        "projectName": "MsCompany.Core",
+        "projectPath": "A:\\Nova pasta\\Ms.Company\\company-ms\\MsCompany.Core.csproj",
         "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
         "outputPath": "A:\\Nova pasta\\Ms.Company\\company-ms\\obj\\",
         "projectStyle": "PackageReference",
@@ -119,8 +119,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "A:\\Nova pasta\\Ms.Company\\company-ms\\Ms.Companies.Core.csproj": {
-                "projectPath": "A:\\Nova pasta\\Ms.Company\\company-ms\\Ms.Companies.Core.csproj"
+              "A:\\Nova pasta\\Ms.Company\\company-ms\\MsCompany.Core.csproj": {
+                "projectPath": "A:\\Nova pasta\\Ms.Company\\company-ms\\MsCompany.Core.csproj"
               }
             }
           }

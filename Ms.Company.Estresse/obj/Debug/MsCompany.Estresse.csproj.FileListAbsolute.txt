@@ -1,0 +1,11 @@
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\bin\Debug\WebTest1.webtest
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\bin\Debug\LoadTest1.loadtest
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\bin\Debug\LoadTest2.loadtest
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\bin\Debug\MsCompany.Estresse.dll
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\bin\Debug\MsCompany.Estresse.pdb
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\bin\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.WebTestFramework.resources.dll
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\obj\Debug\MsCompany.Estresse.csprojAssemblyReference.cache
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\obj\Debug\MsCompany.Estresse.csproj.CopyComplete
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\obj\Debug\MsCompany.Estresse.dll
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\obj\Debug\MsCompany.Estresse.pdb
+A:\Nova pasta\Ms.Company\Ms.Company.Estresse\bin\Debug\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll
