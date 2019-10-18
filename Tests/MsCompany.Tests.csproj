@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <Folder Include="CompanyAddressController\" />
-    <Folder Include="CompanyParamsController\" />
+    <Folder Include="CompanyParamController\" />
   </ItemGroup>
 
 </Project>

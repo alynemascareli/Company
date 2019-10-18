@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MsCompany.Core.Model;
@@ -31,13 +30,16 @@ namespace MsCompany.Core.Controllers
 
         // GET: api/CompanyParams/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CompanyParams>> GetCompanyParams(int id)
+        public ActionResult<CompanyParams> GetCompanyParams(int id)
         {
-            var companyParams = await _context.CompanyParams.FindAsync(id);
+            var companyParams = _context.CompanyParams.Find(id);
 
             if (companyParams == null)
             {
-                return NotFound(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 1) }, 1));
+                if(_error != null)
+                    return NotFound(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 1) }, 1));
+                else
+                    return NotFound(CreateMessageReturnError(new { CompanyParamsId = CreateMessageError(4, 1) }, 1));
             }
 
             return companyParams;
@@ -49,11 +51,17 @@ namespace MsCompany.Core.Controllers
         {
             if (id != companyParams.CompanyParamsId)
             {
-                return BadRequest(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 2) }, 1));
+                if(_error != null)
+                    return BadRequest(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 2) }, 1));
+                else
+                    return BadRequest(CreateMessageReturnError(new { CompanyParamsId = CreateMessageError(4, 2) }, 1));
             }
             if (!CompanyParamsExists(id))
             {
-                return NotFound(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 1) }, 1));
+                if(_error != null)
+                    return NotFound(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 1) }, 1));
+                else
+                    return NotFound(CreateMessageReturnError(new { CompanyParamsId = CreateMessageError(4, 1) }, 1));
             }
 
             try
@@ -62,7 +70,10 @@ namespace MsCompany.Core.Controllers
             }
             catch (DbUpdateConcurrencyException e)
             {
-                return BadRequest(_error.CreateMessageReturnError(e,2));
+                if(_error != null)
+                    return BadRequest(_error.CreateMessageReturnError(e,2));
+                else
+                    return BadRequest(CreateMessageReturnError(e,2));
             }
 
             return NoContent();
@@ -70,19 +81,25 @@ namespace MsCompany.Core.Controllers
 
         // POST: api/CompanyParams
         [HttpPost]
-        public async Task<ActionResult<CompanyParams>> PostCompanyParams(CompanyParams companyParams)
+        public ActionResult PostCompanyParams(CompanyParams companyParams)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(_error.CreateMessageReturnError(ModelState, 1));
+                if(_error != null)
+                    return BadRequest(_error.CreateMessageReturnError(ModelState, 1));
+                else
+                    return BadRequest(CreateMessageReturnError(ModelState, 1));
             }
             try
             {
-                CompanyParamsPost(companyParams);                
+                CompanyParamsPost(companyParams);
             }
             catch (Exception e)
             {
-                return BadRequest(_error.CreateMessageReturnError(e,1));
+                if(_error != null)
+                    return BadRequest(_error.CreateMessageReturnError(e, 1));
+                else
+                    return BadRequest(CreateMessageReturnError(e, 1));
             }
 
             return CreatedAtAction("GetCompanyParams", new { id = companyParams.CompanyParamsId }, companyParams);
@@ -95,7 +112,10 @@ namespace MsCompany.Core.Controllers
             var companyParams = await _context.CompanyParams.FindAsync(id);
             if (companyParams == null)
             {
-                return NotFound(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 1) }, 1));
+                if(_error != null)
+                    return NotFound(_error.CreateMessageReturnError(new { CompanyParamsId = _error.CreateMessageError(4, 1) }, 1));
+                else
+                    return NotFound(CreateMessageReturnError(new { CompanyParamsId = CreateMessageError(4, 1) }, 1));
             }
             companyParams.DateDeleted = DateTime.Now;
             try
@@ -104,7 +124,10 @@ namespace MsCompany.Core.Controllers
             }
             catch (DbUpdateConcurrencyException e)
             {
-                return BadRequest(_error.CreateMessageReturnError(e,2));                
+                if(_error != null)
+                    return BadRequest(_error.CreateMessageReturnError(e,2));
+                else
+                    return BadRequest(CreateMessageReturnError(e, 2));
             }
 
             return Ok();
@@ -141,5 +164,47 @@ namespace MsCompany.Core.Controllers
                 return false;
             }
         }
+        public Error CreateMessageReturnError(dynamic error, int message)
+        {
+            Error _error = new Error()
+            {
+                Message = "Erro ao " + Enum.GetName(typeof(Message), message) + " dados",
+                Type = 1,
+                Errors = error
+            };
+            return _error;
+        }
+        public string CreateMessageError(int type, int message)
+        {
+            switch (message)
+            {
+                case 1:
+                    return Enum.GetName(typeof(TypeError), type) + " não encontrado na base de dados.";
+                case 2:
+                    return Enum.GetName(typeof(TypeError), type) + " informado está incorreto.";
+                case 3:
+                    return Enum.GetName(typeof(TypeError), type) + " Erro ao atualizar na base de dados.";
+                case 4:
+                    return Enum.GetName(typeof(TypeError), type) + " já existente na base de dados.";
+                case 5:
+                    return Enum.GetName(typeof(TypeError), type) + " não encontrado.";
+            }
+
+            return "Error";
+        }
+
+        enum Message
+        {
+            processar = 1,
+            atualizar = 2
+        }
+        enum TypeError
+        {
+            companyId = 1,
+            cnpjCpf = 2,
+            companyAddressId = 3,
+            companyParamsId = 4,
+        }
+
     }
 }

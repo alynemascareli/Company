@@ -21,30 +21,12 @@ namespace MsCompany.Tests.CompanyController
         [Fact]
         public async System.Threading.Tasks.Task Update_InvalidCompanyId_ReturnsBadRequestAsync()
         {
-            int id = 5;
             // Arrange
-            var nameMissingItem = new Company()
-            {
-                CompanyId = 8,
-                FictitiousName = new string("Company 1"),
-                CnpjCpf = new string("35421431891"),
-                Phone = new string(""),
-                CellPhone = new string(""),
-                Email = new string(""),
-                MEI = new string(""),
-                SerieNfce = new string(""),
-                TokenNfce = new string(""),
-                Time = new string(""),
-                Image = new string(""),
-                Status = new int(),
-                DateUpdated = DateTime.Now,
-                DateCreated = DateTime.Now,
-                DateDeleted = new DateTime(0001, 01, 01, 0, 0, 0)
-            };
+            int id = 5;
             _controller.ModelState.AddModelError("BusinessName", "Required");
 
             // Act
-            var badResponse =  _controller.PutCompany( id , nameMissingItem);
+            var badResponse =  _controller.PutCompany( id , CreateCompany());
 
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResponse);
@@ -53,30 +35,12 @@ namespace MsCompany.Tests.CompanyController
         [Fact]
         public async System.Threading.Tasks.Task Update_InexistingCompanyId_ReturnsBadRequestAsync()
         {
-            int id = 8;
             // Arrange
-            var nameMissingItem = new Company()
-            {
-                CompanyId = 6,
-                FictitiousName = new string("Company 1"),
-                CnpjCpf = new string("35421431894"),
-                Phone = new string(""),
-                CellPhone = new string(""),
-                Email = new string(""),
-                MEI = new string(""),
-                SerieNfce = new string(""),
-                TokenNfce = new string(""),
-                Time = new string(""),
-                Image = new string(""),
-                Status = new int(),
-                DateUpdated = DateTime.Now,
-                DateCreated = DateTime.Now,
-                DateDeleted = new DateTime(0001, 01, 01, 0, 0, 0)
-            };
+            int id = 8;
             _controller.ModelState.AddModelError("BusinessName", "Required");
 
             // Act
-            var badResponse =  _controller.PutCompany( id , nameMissingItem);
+            var badResponse =  _controller.PutCompany( id , CreateCompany());
 
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResponse);
@@ -86,29 +50,12 @@ namespace MsCompany.Tests.CompanyController
         [Fact]
         public async System.Threading.Tasks.Task Update_InvalidCNPJCPF_ReturnsBadRequestAsync()
         {
-            int id = 8;
             // Arrange
-            var nameMissingItem = new Company()
-            {
-                FictitiousName = new string("Company 1"),
-                CnpjCpf = new string("35421431891"),
-                Phone = new string(""),
-                CellPhone = new string(""),
-                Email = new string(""),
-                MEI = new string(""),
-                SerieNfce = new string(""),
-                TokenNfce = new string(""),
-                Time = new string(""),
-                Image = new string(""),
-                Status = new int(),
-                DateUpdated = DateTime.Now,
-                DateCreated = DateTime.Now,
-                DateDeleted = new DateTime(0001, 01, 01, 0, 0, 0)
-            };
+            int id = 8;            
             _controller.ModelState.AddModelError("BusinessName", "Required");
 
             // Act
-            var badResponse =  _controller.PutCompany( id , nameMissingItem);
+            var badResponse =  _controller.PutCompany( id , CreateCompany());
 
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResponse);
@@ -117,29 +64,12 @@ namespace MsCompany.Tests.CompanyController
         [Fact]
         public async System.Threading.Tasks.Task Update_ExistingCNPJCPFPassed_ReturnsBadRequestAsync()
         {
-            int id = 8;
             // Arrange
-            var nameMissingItem = new Company()
-            {
-                FictitiousName = new string("Company 1"),
-                CnpjCpf = new string("35421431894"),
-                Phone = new string(""),
-                CellPhone = new string(""),
-                Email = new string(""),
-                MEI = new string(""),
-                SerieNfce = new string(""),
-                TokenNfce = new string(""),
-                Time = new string(""),
-                Image = new string(""),
-                Status = new int(),
-                DateUpdated = DateTime.Now,
-                DateCreated = DateTime.Now,
-                DateDeleted = new DateTime(0001, 01, 01, 0, 0, 0)
-            };
+            int id = 8;
             _controller.ModelState.AddModelError("BusinessName", "Required");
 
             // Act
-            var badResponse =  _controller.PutCompany( id , nameMissingItem);
+            var badResponse =  _controller.PutCompany( id , CreateCompany());
 
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResponse);
@@ -149,29 +79,12 @@ namespace MsCompany.Tests.CompanyController
         [Fact]
         public async System.Threading.Tasks.Task Update_InvalidObjectPassed_ReturnsBadRequestBDAsync()
         {
-            int id = 8;
             // Arrange
-            var nameMissingItem = new Company()
-            {
-                FictitiousName = new string("Company 1"),
-                CnpjCpf = new string("35421431891"),
-                Phone = new string(""),
-                CellPhone = new string(""),
-                Email = new string(""),
-                MEI = new string(""),
-                SerieNfce = new string(""),
-                TokenNfce = new string(""),
-                Time = new string(""),
-                Image = new string(""),
-                Status = new int(),
-                DateUpdated = DateTime.Now,
-                DateCreated = DateTime.Now,
-                DateDeleted = new DateTime(0001, 01, 01, 0, 0, 0)
-            };
+            int id = 8 ;
             _controller.ModelState.AddModelError("BusinessName", "Required");
 
             // Act
-            var badResponse =  _controller.PutCompany( id , nameMissingItem);
+            var badResponse =  _controller.PutCompany( id , CreateCompany());
 
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResponse);
@@ -182,14 +95,24 @@ namespace MsCompany.Tests.CompanyController
         [Fact]
         public async System.Threading.Tasks.Task Update_ValidObjectPassed_ReturnsCreatedResponseAsync()
         {
-            int id = 6;
             // Arrange
-            Company testItem = new Company()
+            int id = 6;
+            
+            // Act
+            var createdResponse =  _controller.PutCompany(id , CreateCompany());
+
+            // Assert
+            Assert.IsType<NoContentResult>(createdResponse);
+        }
+
+        public Company CreateCompany()
+        {
+            return new Company()
             {
                 CompanyId = 6,
                 BusinessName = new string("Company 1"),
                 FictitiousName = new string("Company 1"),
-                CnpjCpf = new string("59851724149"),
+                CnpjCpf = new string("00637583850"),
                 Phone = new string(""),
                 CellPhone = new string(""),
                 Email = new string(""),
@@ -203,12 +126,6 @@ namespace MsCompany.Tests.CompanyController
                 DateCreated = DateTime.Now,
                 DateDeleted = new DateTime(0001, 01, 01, 0, 0, 0)
             };
-
-            // Act
-            var createdResponse =  _controller.PutCompany(id , testItem);
-
-            // Assert
-            Assert.IsType<NoContentResult>(createdResponse);
         }
 
 
